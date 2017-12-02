@@ -15,6 +15,10 @@
 		508E44221FD023E90028D2E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508E44201FD023E90028D2E9 /* LaunchScreen.storyboard */; };
 		508E442B1FD030600028D2E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E442A1FD030600028D2E9 /* Extensions.swift */; };
 		508E442D1FD18BB60028D2E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 508E442C1FD18BB60028D2E9 /* GoogleService-Info.plist */; };
+		508E442F1FD241860028D2E9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E442E1FD241860028D2E9 /* MainTabBarController.swift */; };
+		508E44311FD2428D0028D2E9 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44301FD2428D0028D2E9 /* UserProfileController.swift */; };
+		508E44331FD24A420028D2E9 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44321FD24A420028D2E9 /* UserProfileHeader.swift */; };
+		508E44361FD24E5B0028D2E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44351FD24E5B0028D2E9 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		508E44231FD023E90028D2E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508E442A1FD030600028D2E9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		508E442C1FD18BB60028D2E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		508E442E1FD241860028D2E9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		508E44301FD2428D0028D2E9 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		508E44321FD24A420028D2E9 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		508E44351FD24E5B0028D2E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A24D63E73304183D910DDC93 /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		B7521DB7CCFA40020E33A235 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,8 +82,10 @@
 		508E44161FD023E90028D2E9 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				508E44341FD24A460028D2E9 /* UserProfile */,
 				508E44291FD030500028D2E9 /* Utils */,
 				508E44171FD023E90028D2E9 /* AppDelegate.swift */,
+				508E442E1FD241860028D2E9 /* MainTabBarController.swift */,
 				508E44191FD023E90028D2E9 /* ViewController.swift */,
 				508E441B1FD023E90028D2E9 /* Main.storyboard */,
 				508E441E1FD023E90028D2E9 /* Assets.xcassets */,
@@ -92,6 +102,16 @@
 				508E442A1FD030600028D2E9 /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		508E44341FD24A460028D2E9 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				508E44321FD24A420028D2E9 /* UserProfileHeader.swift */,
+				508E44301FD2428D0028D2E9 /* UserProfileController.swift */,
+				508E44351FD24E5B0028D2E9 /* User.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		F4C6576C81666FBE7B76F5FC /* Frameworks */ = {
@@ -240,7 +260,11 @@
 			files = (
 				508E441A1FD023E90028D2E9 /* ViewController.swift in Sources */,
 				508E442B1FD030600028D2E9 /* Extensions.swift in Sources */,
+				508E442F1FD241860028D2E9 /* MainTabBarController.swift in Sources */,
+				508E44331FD24A420028D2E9 /* UserProfileHeader.swift in Sources */,
+				508E44311FD2428D0028D2E9 /* UserProfileController.swift in Sources */,
 				508E44181FD023E90028D2E9 /* AppDelegate.swift in Sources */,
+				508E44361FD24E5B0028D2E9 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
