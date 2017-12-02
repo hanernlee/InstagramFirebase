@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F35210BD92AB05A7F03D9F0 /* Pods_InstagramFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7521DB7CCFA40020E33A235 /* Pods_InstagramFirebase.framework */; };
 		508E44181FD023E90028D2E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44171FD023E90028D2E9 /* AppDelegate.swift */; };
-		508E441A1FD023E90028D2E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44191FD023E90028D2E9 /* ViewController.swift */; };
+		508E441A1FD023E90028D2E9 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44191FD023E90028D2E9 /* SignUpController.swift */; };
 		508E441D1FD023E90028D2E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508E441B1FD023E90028D2E9 /* Main.storyboard */; };
 		508E441F1FD023E90028D2E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508E441E1FD023E90028D2E9 /* Assets.xcassets */; };
 		508E44221FD023E90028D2E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508E44201FD023E90028D2E9 /* LaunchScreen.storyboard */; };
@@ -19,13 +19,14 @@
 		508E44311FD2428D0028D2E9 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44301FD2428D0028D2E9 /* UserProfileController.swift */; };
 		508E44331FD24A420028D2E9 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44321FD24A420028D2E9 /* UserProfileHeader.swift */; };
 		508E44361FD24E5B0028D2E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E44351FD24E5B0028D2E9 /* User.swift */; };
+		50CFE2CB1FD277ED00529D9E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2CA1FD277ED00529D9E /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00261DE8C253E38E5C637B6C /* Pods-InstagramFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		508E44141FD023E90028D2E9 /* InstagramFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508E44171FD023E90028D2E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		508E44191FD023E90028D2E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		508E44191FD023E90028D2E9 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		508E441C1FD023E90028D2E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		508E441E1FD023E90028D2E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		508E44211FD023E90028D2E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		508E44301FD2428D0028D2E9 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		508E44321FD24A420028D2E9 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		508E44351FD24E5B0028D2E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50CFE2CA1FD277ED00529D9E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A24D63E73304183D910DDC93 /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		B7521DB7CCFA40020E33A235 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,11 +84,11 @@
 		508E44161FD023E90028D2E9 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				50CFE2C91FD277D100529D9E /* Login */,
 				508E44341FD24A460028D2E9 /* UserProfile */,
 				508E44291FD030500028D2E9 /* Utils */,
 				508E44171FD023E90028D2E9 /* AppDelegate.swift */,
 				508E442E1FD241860028D2E9 /* MainTabBarController.swift */,
-				508E44191FD023E90028D2E9 /* ViewController.swift */,
 				508E441B1FD023E90028D2E9 /* Main.storyboard */,
 				508E441E1FD023E90028D2E9 /* Assets.xcassets */,
 				508E44201FD023E90028D2E9 /* LaunchScreen.storyboard */,
@@ -112,6 +114,15 @@
 				508E44351FD24E5B0028D2E9 /* User.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		50CFE2C91FD277D100529D9E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				50CFE2CA1FD277ED00529D9E /* LoginController.swift */,
+				508E44191FD023E90028D2E9 /* SignUpController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F4C6576C81666FBE7B76F5FC /* Frameworks */ = {
@@ -258,11 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508E441A1FD023E90028D2E9 /* ViewController.swift in Sources */,
+				508E441A1FD023E90028D2E9 /* SignUpController.swift in Sources */,
 				508E442B1FD030600028D2E9 /* Extensions.swift in Sources */,
 				508E442F1FD241860028D2E9 /* MainTabBarController.swift in Sources */,
 				508E44331FD24A420028D2E9 /* UserProfileHeader.swift in Sources */,
 				508E44311FD2428D0028D2E9 /* UserProfileController.swift in Sources */,
+				50CFE2CB1FD277ED00529D9E /* LoginController.swift in Sources */,
 				508E44181FD023E90028D2E9 /* AppDelegate.swift in Sources */,
 				508E44361FD24E5B0028D2E9 /* User.swift in Sources */,
 			);
