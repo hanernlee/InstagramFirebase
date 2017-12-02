@@ -16,11 +16,16 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     var images = [UIImage]()
     var selectedImage: UIImage?
     var assets = [PHAsset]()
+    var header: PhotoSelectorHeader?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationButtons()
+        
+        // Sticky Headers
+        let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.sectionHeadersPinToVisibleBounds = true
         
         collectionView?.backgroundColor = .white
         
@@ -64,9 +69,9 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     
     
     // Setting up Header
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let width = view.frame.width
@@ -74,7 +79,15 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! PhotoSelectorHeader
+        
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: header.frame.height - 1, width: header.frame.width, height: 1)
+        bottomBorder.backgroundColor = UIColor.white.cgColor
+        header.layer.addSublayer(bottomBorder)
+        
+        self.header = header
         
         header.photoImageView.image = selectedImage
         
@@ -99,9 +112,12 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
         self.selectedImage = images[indexPath.item]
         
         self.collectionView?.reloadData()
+        
+//        let indexPath = IndexPath(item: 0, section: 0)
+//        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
     }
     
-    // MARK:- File Private functions
+    // MARK:- File Private methods
     fileprivate func assetFetchOptions() -> PHFetchOptions {
         let fetchOptions = PHFetchOptions()
         fetchOptions.fetchLimit = 30
@@ -154,6 +170,8 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     }
     
     @objc func handleNext() {
-        print("Handling next")
+        let sharePhotoController = SharePhotoController()
+        sharePhotoController.selectedImage = header?.photoImageView.image
+        navigationController?.pushViewController(sharePhotoController, animated: true)
     }
 }

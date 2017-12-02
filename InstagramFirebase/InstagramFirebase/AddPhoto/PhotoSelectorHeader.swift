@@ -12,7 +12,7 @@ class PhotoSelectorHeader: UICollectionViewCell {
     let photoImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .cyan
+        iv.backgroundColor = .white
         iv.clipsToBounds = true
         return iv
     }()
