@@ -29,6 +29,7 @@
 		50CFE2DB1FD3B9A500529D9E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2DA1FD3B9A500529D9E /* CustomImageView.swift */; };
 		50CFE2DE1FD3EA8200529D9E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2DD1FD3EA8200529D9E /* HomeController.swift */; };
 		50CFE2E01FD3EB5B00529D9E /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2DF1FD3EB5B00529D9E /* HomePostCell.swift */; };
+		50CFE2E21FD438BF00529D9E /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2E11FD438BF00529D9E /* FirebaseUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		50CFE2DA1FD3B9A500529D9E /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		50CFE2DD1FD3EA8200529D9E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		50CFE2DF1FD3EB5B00529D9E /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
+		50CFE2E11FD438BF00529D9E /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		A24D63E73304183D910DDC93 /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		B7521DB7CCFA40020E33A235 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 			children = (
 				508E442A1FD030600028D2E9 /* Extensions.swift */,
 				50CFE2DA1FD3B9A500529D9E /* CustomImageView.swift */,
+				50CFE2E11FD438BF00529D9E /* FirebaseUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CFE2E21FD438BF00529D9E /* FirebaseUtils.swift in Sources */,
 				508E441A1FD023E90028D2E9 /* SignUpController.swift in Sources */,
 				50CFE2E01FD3EB5B00529D9E /* HomePostCell.swift in Sources */,
 				508E442B1FD030600028D2E9 /* Extensions.swift in Sources */,
