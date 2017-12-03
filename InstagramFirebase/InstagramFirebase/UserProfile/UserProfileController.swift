@@ -30,7 +30,6 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         
         setupLogOutButton()
         
-//        fetchPosts()
         fetchOrderedPosts()
     }
     
@@ -93,6 +92,27 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         }
     }
     
+    fileprivate func fetchOrderedPosts() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let ref = Database.database().reference().child("posts").child(uid)
+        ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
+            
+            guard let dictionary = snapshot.value as? [String: Any] else { return }
+            
+            guard let user = self.user else { return }
+            
+            let post = Post(user: user, dictionary: dictionary)
+            
+            self.posts.insert(post, at: 0)
+            
+            self.collectionView?.reloadData()
+            
+        }) { (error) in
+            print("Failed to fetch oredered posts:", error)
+        }
+    }
+    
     fileprivate func setupLogOutButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "gear").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogOut))
     }
@@ -117,46 +137,5 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    fileprivate func fetchPosts() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("posts").child(uid)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionaries = snapshot.value as? [String: Any] else { return }
-            
-            dictionaries.forEach({ (key, value) in
-                print("Key \(key), Value: \(value)")
-                
-                guard let dictionary = value as? [String: Any] else { return }
-                
-                let post = Post(dictionary: dictionary)
-                print(post.imageUrl)
-                self.posts.append(post)
-            })
-            
-            self.collectionView?.reloadData()
-            
-        }) { (err) in
-            print("Failed to fetch posts:", err)
-        }
-    }
-    
-    fileprivate func fetchOrderedPosts() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        let ref = Database.database().reference().child("posts").child(uid)
-        ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
-            
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
-            
-            let post = Post(dictionary: dictionary)
-            self.posts.append(post)
-            
-            self.collectionView?.reloadData()
-            
-        }) { (error) in
-            print("Failed to fetch oredered posts:", error)
-        }
     }
 }
