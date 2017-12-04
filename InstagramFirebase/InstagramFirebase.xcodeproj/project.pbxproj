@@ -31,6 +31,7 @@
 		50CFE2E01FD3EB5B00529D9E /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2DF1FD3EB5B00529D9E /* HomePostCell.swift */; };
 		50CFE2E21FD438BF00529D9E /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2E11FD438BF00529D9E /* FirebaseUtils.swift */; };
 		50CFE2E51FD574A100529D9E /* UserSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2E41FD574A100529D9E /* UserSearchController.swift */; };
+		50CFE2E71FD5792900529D9E /* UserSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2E61FD5792900529D9E /* UserSearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		50CFE2DF1FD3EB5B00529D9E /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		50CFE2E11FD438BF00529D9E /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		50CFE2E41FD574A100529D9E /* UserSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchController.swift; sourceTree = "<group>"; };
+		50CFE2E61FD5792900529D9E /* UserSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCell.swift; sourceTree = "<group>"; };
 		A24D63E73304183D910DDC93 /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		B7521DB7CCFA40020E33A235 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				50CFE2E41FD574A100529D9E /* UserSearchController.swift */,
+				50CFE2E61FD5792900529D9E /* UserSearchCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CFE2E71FD5792900529D9E /* UserSearchCell.swift in Sources */,
 				50CFE2E21FD438BF00529D9E /* FirebaseUtils.swift in Sources */,
 				508E441A1FD023E90028D2E9 /* SignUpController.swift in Sources */,
 				50CFE2E01FD3EB5B00529D9E /* HomePostCell.swift in Sources */,
