@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
-class CameraController: UIViewController {
+class CameraController: UIViewController, AVCapturePhotoCaptureDelegate {
+
+    let output = AVCapturePhotoOutput()
     
     let dismissButton: UIButton = {
         let button = UIButton(type: .system)
@@ -58,7 +60,7 @@ class CameraController: UIViewController {
         }
         
         // 2. setup outputs
-        let output = AVCapturePhotoOutput()
+    
         if captureSession.canAddOutput(output) {
             captureSession.addOutput(output)
         }
@@ -72,11 +74,29 @@ class CameraController: UIViewController {
     }
     
     // MARK:- Handle Button Events
-   @objc func handleCapturePhoto() {
+    @objc func handleCapturePhoto() {
+        let settings = AVCapturePhotoSettings()
+        #if (!arch(x86_64))
+            guard let previewFormatType = settings.availablePreviewPhotoPixelFormatTypes.first else { return }
+            settings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewFormatType]
         
+            output.capturePhoto(with: settings, delegate: self)
+        #endif
     }
     
     @objc func handleDismiss() {
+        print("here")
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK:- Capture Photo Delegate
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation() else { return }
+        
+        let previewImage = UIImage(data: imageData)
+        
+        let previewImageView = UIImageView(image: previewImage)
+        view.addSubview(previewImageView)
+        previewImageView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
 }
