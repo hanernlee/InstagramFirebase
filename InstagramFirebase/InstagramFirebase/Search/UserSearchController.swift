@@ -12,7 +12,7 @@ import Firebase
 class UserSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     let cellId = "cellId"
-    
+        
     var users = [User]()
     
     var filteredUsers = [User]()
@@ -40,8 +40,15 @@ class UserSearchController: UICollectionViewController, UICollectionViewDelegate
         collectionView?.register(UserSearchCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView?.alwaysBounceVertical = true
+        collectionView?.keyboardDismissMode = .onDrag
         
         fetchUsers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        searchBar.isHidden = false
     }
     
     // MARK: - Collection View Delegates
@@ -60,6 +67,18 @@ class UserSearchController: UICollectionViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 66)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchBar.isHidden = true
+        searchBar.resignFirstResponder()
+
+        let user = filteredUsers[indexPath.item]
+        
+        let userProfileController = UserProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+        userProfileController.userId = user.uid
+        
+        navigationController?.pushViewController(userProfileController, animated: true)
     }
     
     // MARK: - Search Bar Delegate
@@ -83,6 +102,11 @@ class UserSearchController: UICollectionViewController, UICollectionViewDelegate
             guard let dictionaries = snapshot.value as? [String: Any] else { return }
             
             dictionaries.forEach({ (key, value) in
+                
+                if key == Auth.auth().currentUser?.uid {
+                    print("Found myself, omit fron list")
+                    return
+                }
                 
                 guard let userDictionary = value as? [String: Any] else { return }
                 
