@@ -22,6 +22,7 @@
 		50C6A2D11FD7E89700BBFD59 /* PreviewPhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A2D01FD7E89700BBFD59 /* PreviewPhotoContainerView.swift */; };
 		50C6A2D31FD7F37200BBFD59 /* CustomAnimationPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A2D21FD7F37200BBFD59 /* CustomAnimationPresentor.swift */; };
 		50C6A2D51FD7F63E00BBFD59 /* CustomAnimationDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A2D41FD7F63E00BBFD59 /* CustomAnimationDismisser.swift */; };
+		50C6A2D71FD7FC2400BBFD59 /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C6A2D61FD7FC2400BBFD59 /* CommentsController.swift */; };
 		50CFE2CB1FD277ED00529D9E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2CA1FD277ED00529D9E /* LoginController.swift */; };
 		50CFE2CD1FD28EF400529D9E /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2CC1FD28EF400529D9E /* PhotoSelectorController.swift */; };
 		50CFE2D01FD2AE8C00529D9E /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE2CF1FD2AE8C00529D9E /* PhotoSelectorCell.swift */; };
@@ -56,6 +57,7 @@
 		50C6A2D01FD7E89700BBFD59 /* PreviewPhotoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoContainerView.swift; sourceTree = "<group>"; };
 		50C6A2D21FD7F37200BBFD59 /* CustomAnimationPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentor.swift; sourceTree = "<group>"; };
 		50C6A2D41FD7F63E00BBFD59 /* CustomAnimationDismisser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationDismisser.swift; sourceTree = "<group>"; };
+		50C6A2D61FD7FC2400BBFD59 /* CommentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
 		50CFE2CA1FD277ED00529D9E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		50CFE2CC1FD28EF400529D9E /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		50CFE2CF1FD2AE8C00529D9E /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				50CFE2DD1FD3EA8200529D9E /* HomeController.swift */,
 				50CFE2DF1FD3EB5B00529D9E /* HomePostCell.swift */,
+				50C6A2D61FD7FC2400BBFD59 /* CommentsController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				508E44181FD023E90028D2E9 /* AppDelegate.swift in Sources */,
 				50CFE2DE1FD3EA8200529D9E /* HomeController.swift in Sources */,
 				50CFE2D91FD3B46B00529D9E /* UserProfilePhotoCell.swift in Sources */,
+				50C6A2D71FD7FC2400BBFD59 /* CommentsController.swift in Sources */,
 				508E44361FD24E5B0028D2E9 /* User.swift in Sources */,
 				50CFE2D01FD2AE8C00529D9E /* PhotoSelectorCell.swift in Sources */,
 			);

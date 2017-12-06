@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomePostCellDelegate {
     
     let cellId = "cellId"
     
@@ -46,6 +46,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             cell.post = posts[indexPath.item]
         }
         
+        cell.delegate = self
+        
         return cell
     }
     
@@ -57,6 +59,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         height += 60
         
         return CGSize(width: view.frame.width, height: height)
+    }
+    
+    // MARK: - Home Post Cell Delegate
+    func didTapComment(post: Post) {
+        let commentsController = CommentsController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController?.pushViewController(commentsController, animated: true)
     }
     
     // MARK: - Fileprivate methods
