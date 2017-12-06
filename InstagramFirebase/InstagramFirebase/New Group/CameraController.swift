@@ -76,23 +76,22 @@ class CameraController: UIViewController, AVCapturePhotoCaptureDelegate {
     // MARK:- Handle Button Events
     @objc func handleCapturePhoto() {
         let settings = AVCapturePhotoSettings()
-        #if (!arch(x86_64))
+//        #if (!arch(x86_64))
             guard let previewFormatType = settings.availablePreviewPhotoPixelFormatTypes.first else { return }
             settings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewFormatType]
         
             output.capturePhoto(with: settings, delegate: self)
-        #endif
+//        #endif
     }
     
     @objc func handleDismiss() {
-        print("here")
         dismiss(animated: true, completion: nil)
     }
     
     // MARK:- Capture Photo Delegate
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let imageData = photo.fileDataRepresentation() else { return }
-        
+        print("snapped")
         let previewImage = UIImage(data: imageData)
         
         let previewImageView = UIImageView(image: previewImage)
