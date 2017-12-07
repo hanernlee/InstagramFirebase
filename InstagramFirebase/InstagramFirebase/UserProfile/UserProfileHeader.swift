@@ -9,7 +9,14 @@
 import UIKit
 import Firebase
 
+protocol UserProfileHeaderDelegate {
+    func didChangeToListView()
+    func didChangeToGridView()
+}
+
 class UserProfileHeader: UICollectionViewCell {
+    
+    var delegate: UserProfileHeaderDelegate?
     
     var user: User? {
         didSet {
@@ -28,15 +35,17 @@ class UserProfileHeader: UICollectionViewCell {
         return iv
     }()
     
-    let gridButton: UIButton = {
+    lazy var gridButton: UIButton = {
         let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(handleChangeToGridView), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "grid"), for: .normal)
         return button
     }()
     
-    let listButton: UIButton = {
+    lazy var listButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "list"), for: .normal)
+        button.addTarget(self, action: #selector(handleChangeToListView), for: .touchUpInside)
         button.tintColor = UIColor(white: 0, alpha: 0.2)
         return button
     }()
@@ -188,12 +197,24 @@ class UserProfileHeader: UICollectionViewCell {
     
     fileprivate func setupFollowStyle() {
         self.editProfileFollowButton.setTitle("Follow", for: .normal)
-        self.editProfileFollowButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        self.editProfileFollowButton.backgroundColor = .mainBlue()
         self.editProfileFollowButton.setTitleColor(.white, for: .normal)
         self.editProfileFollowButton.layer.borderColor = UIColor(white: 0, alpha: 0.2).cgColor
     }
     
     // MARK: - Button Actions
+    @objc func handleChangeToGridView() {
+        gridButton.tintColor = .mainBlue()
+        listButton.tintColor = UIColor(white: 0, alpha: 0.2)
+        delegate?.didChangeToGridView()
+    }
+    
+    @objc func handleChangeToListView() {
+        listButton.tintColor = .mainBlue()
+        gridButton.tintColor = UIColor(white: 0, alpha: 0.2)
+        delegate?.didChangeToListView()
+    }
+    
     @objc func handleEditProfileOrFollow() {
         
         guard let currentLoggedInUserId = Auth.auth().currentUser?.uid else { return }

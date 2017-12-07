@@ -79,7 +79,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let values = [uid: 1]
+        let values = [uid: post.hasLiked == true ? 0 : 1]
         
         Database.database().reference().child("likes").child(postId).updateChildValues(values) { (err, _) in
             if let err = err {
