@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class UserSearchController: UICollectionViewController, UISearchBarDelegate {
     
     let cellId = "cellId"
         
